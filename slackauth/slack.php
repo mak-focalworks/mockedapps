@@ -8,6 +8,9 @@
         $objectResp = json_decode($resp);
         $array = json_decode(json_encode($objectResp), true);
         $token= $array["token"];
+        curl_close($curl);
+        echo $token;
+        exit;
         curl_setopt($curl, CURLOPT_URL, "https://slack.com/api/users.list?presence=true&code=$token&pretty=1");
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $resp = curl_exec($curl);
