@@ -12,6 +12,7 @@
         //---------------------------------------------
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, "https://slack.com/api/users.list?presence=true&code=$token&pretty=1");
+        echo "https://slack.com/api/users.list?presence=true&code=$token&pretty=1";
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $resp = curl_exec($curl);
         $objectResp = json_decode($resp);
